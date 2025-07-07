@@ -297,6 +297,10 @@ footer {
 
 /* esta configuracion es para adaptar en telefonos o pantallas mas pequeñas */
 @media (max-width: 768px) {
+  .Texto_medio {
+    font-size: 20px;
+  }
+
   .encabezado {
     flex-direction: column;
     align-items: center;
@@ -309,11 +313,8 @@ footer {
   }
 
   .Logo {
+    margin-left: 0px;
     margin-bottom: 20px;
-  }
-
-  .Texto_medio {
-    font-size: 20px;
   }
 
   .search-container {
@@ -328,9 +329,13 @@ footer {
   }
 
   footer {
-    flex-direction: row;
     margin-top: 40px;
     padding: 40px 10px;
+  }
+
+  .footer-top-section {
+    flex-direction: row; 
+    width: 100%; 
   }
 
   .redes-sociales {
@@ -344,10 +349,32 @@ footer {
   }
 
   .linea-social {
-    flex: 1;
-    width: 2000px;
+    flex-direction: row; 
+    width: 200px; 
     height: 1.5px;
     background-color: #ffffff;
-    max-width: 100%;
+    max-width: 100%; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+
+  .texto-final h6 {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .creditos {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 0px;
+  }
+
+  .linea-creditos {
+    width: 1.5px;
+    height: 1.2em;
+    background-color: #ffffff;
   }
 }
