@@ -1,0 +1,353 @@
+/* Aqui le damos el color a toda el cuerpo de la pagina y definimos el tipo de fuente de letra */
+body {
+  background-color: #1A2F2A;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* En esta parte vamos a modificar todos los elementos de la clase encabezado para que se visualice de forma horizontal */
+/* aqui modificamos todos los textos que encontramos en el encabezado */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* aqui modificamos todos los textos que encontramos en el encabezado */
+.encabezado p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* aqui vamos a modificar los iconos del centro  y el boton usuario */
+.derecha {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.centro-publicados,
+.centro-notificaciones{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* aqui ajustamos las imagenes */
+.centro img,
+.derecha img {
+  width: 30px;
+  height: auto;
+}
+
+/* aqui definimos las caracteristicas del logo */
+.Logo {
+  width: 112px;
+  height: 67px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+/* a partir de aqui vamos a darle estilo al menu desplegable */
+.usuario-menu {
+  position: relative;
+}
+
+/* aqui modificamos todo lo visual del boton del encabezado */
+.boton-usuario {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #34D399;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* aqui modificamos ya el menu que se despliega despues del boton */
+.menu-desplegable {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: rgba(50, 139, 91, 0.2);
+  border-radius: 10px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* aqui modificamos la flecha del menu desplegable */
+.menu-desplegable .flecha-arriba {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(50, 139, 91, 0.2);
+}
+
+/* aqui modificamos las opciones que encontramos en el menu desplegable */
+.menu-desplegable ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.menu-desplegable ul li {
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-desplegable ul li:hover {
+  background-color: #E3F9F4;
+  color: #003322;
+}
+
+/* Hasta aqui va todo lo de la parte superior de iconos */
+
+/*Ahora apartir de aqui empieza toda la mitad hacia abajo de la pagina */
+ /* Main contenido */
+ main {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+section.perfil-info,
+section.editar-perfil {
+  background-color: #0D1F1A;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.06);
+}
+
+/* Perfil info: círculo inicial arriba */
+section.perfil-info {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  align-items: center;
+  gap: 35px;
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+section.perfil-info .user-circle {
+  margin: 7%;
+  width: 80px;
+  height: 80px;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #34D399;
+  border-radius: 100%;
+  flex-direction: center;
+}
+
+section.perfil-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Editar perfil */
+section.editar-perfil h2 {
+  margin: 7%;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  border: none;
+  border-radius: 10px;
+  background-color: #2F4F48;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  outline-offset: 2px;
+  outline-color: #ffffff;
+  transition: outline-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  outline-color: #ffffff;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #34D399;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.15);
+  transition: background-color 0.3s ease;
+  align-self: center;
+  width: 120px;
+}
+button:hover,
+button:focus {
+  background-color: #1A2F2A;
+  outline: none;
+}
+
+/* esta es toda la parte del footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: 80px;
+  padding: 80px 20px;
+  gap: 10px;
+  color: #ffffff;
+  background-color: #0D1F1A;
+}
+
+.footer-top-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%; 
+    gap: 30px; 
+}
+
+.linea-social {
+  flex: 1;
+  height: 1.5px;
+  background-color: #ffffff;
+  max-width: 800px;
+  min-width: 50px;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 60px;
+}
+
+.icono-borde i {
+  color: transparent;
+  font-size: 40px;
+  -webkit-text-stroke: 1.2px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.icono-borde i:hover {
+  color: #E3F9F4;
+  -webkit-text-stroke: 0;
+}
+
+.texto-final h6 {
+    text-align: center;
+    margin-bottom: 0%;
+}
+
+.creditos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 0%;
+}
+
+.linea-creditos {
+    width: 1.5px;
+    height: 1.2em;
+    margin-top: 10%;
+    background-color: #ffffff;
+}
+
+/* esta configuracion es para adaptar en telefonos o pantallas mas pequeñas */
+@media (max-width: 768px) {
+  .encabezado {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .centro,
+  .derecha {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .Logo {
+    margin-bottom: 20px;
+  }
+
+  .Texto_medio {
+    font-size: 20px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 10px;
+  }
+
+  .contenedor-iconos {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  footer {
+    flex-direction: row;
+    margin-top: 40px;
+    padding: 40px 10px;
+  }
+
+  .redes-sociales {
+    gap: 30px;
+  }
+
+  .menu-desplegable {
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
+
+  .linea-social {
+    flex: 1;
+    width: 2000px;
+    height: 1.5px;
+    background-color: #ffffff;
+    max-width: 100%;
+  }
+}

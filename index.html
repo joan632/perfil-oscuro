@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <!-- Aqui conectamos el css y una url para poder utilizar la tipografia del FIGMA -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Aqui importamos la biblioteca de iconos Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Aqui se encuentran todos los iconos que van en la parte superior de la pagina
+  con su respectivo boton -->
+  <div class="encabezado">
+    <!-- aqui implementamos un div para manejar unicamente el logo -->
+      <div class="Logo">
+          <img src="IMAGENES/Logo.png" alt="icono de logo" class="Logo" onclick="window.location.href='url de la pagina principal'">
+      </div>
+       <!-- aqui implementamos otro div para los otros iconos de la parte superior -->
+    <div class="derecha usuario-menu">
+      <!-- aqui usamos otro div para los iconos del centro -->
+      <div class="centro-publicados" onclick="window.location.href='url de la interfaz de publicados'">
+        <img src="IMAGENES/Icono de publicados.png" alt="icono de publicados">
+        <p>Publicados</p>
+      </div>
+      <div class="centro-notificaciones" onclick="window.location.href='url de la interfaz de notificaciones'">
+        <img src="IMAGENES/Icono de notificaciones.png" alt="icono de notificaciones">
+        <p>Notificaciones</p>
+      </div>
+      <!-- aqui implementamos el boton que despliega el menu oculto -->
+      <button class="boton-usuario">A</button>
+      <!-- aqui creamos un div para implemetar el contenido del menu -->
+      <div class="menu-desplegable">
+        <!-- aqui creamos un div para dar la caracteristica de la flecha de la parte de arriba del menu -->
+        <div class="flecha-arriba"></div>
+        <!-- aqui creamos una lista para las opciones que tenemos en el menu y usamos iconos predefinidos del font awesome-->
+        <ul>
+          <li onclick="window.location.href='https://joan632.github.io/perfil/'"><i class="fas fa-user"></i> Perfil</li>
+          <li><i class="fas fa-cog"></i> Configuración</li>
+          <li><i class="fas fa-question-circle"></i> Ayuda</li>
+          <li><i class="fas fa-sign-out-alt"></i> Cerrar sesión</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <!-- aqui ponemos las dos secciones del perfil de usuario -->
+     <main>
+      <section class="perfil-info" aria-labelledby="perfil-title">
+        <div class="user-circle" aria-hidden="true">D</div>
+        <div>
+          <p><strong>Nombre de usuario</strong></p>
+          <p><strong>Correo</strong></p>
+          <p><strong>Documento</strong></p>
+          <p><strong>Programa Académico</strong></p>
+        </div>
+      </section>
+
+      <section class="editar-perfil" aria-labelledby="editar-title">
+        <h2 id="editar-title">EDITAR PERFIL</h2>
+        <form action="#" aria-label="Formulario para editar perfil de usuario" novalidate>
+          <input type="text" name="nombre" placeholder="Nombre de usuario" aria-label="Nombre de usuario" />
+          <input type="email" name="correo" placeholder="Correo electrónico" aria-label="Correo electrónico" />
+          <input type="number" name="documento" placeholder="Documento" aria-label="Documento" />
+          <input type="text" name="programa" placeholder="Programa Académico" aria-label="Programa Académico" />
+          <button type="submit" aria-label="Guardar cambios en perfil">GUARDAR</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- aqui comenzamos la parte inferior de la pagina -->
+    <footer>
+      <div class="footer-top-section">
+          <div class="linea-social"></div>
+          <div class="redes-sociales">
+              <a href="https://www.facebook.com" target="_blank" class="icono-borde">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" class="icono-borde">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" class="icono-borde">
+                <i class="fab fa-twitter"></i>
+              </a>
+          </div>
+          <div class="linea-social"></div>
+      </div>
+  
+      <div class="texto-final">
+          <h6>© 2025 SENA INTERACTIVE PORTAL</h6>
+          <div class="creditos">
+              <h6>Información legal</h6>
+              <div class="linea-creditos"></div>
+              <h6>Politicas de privacidad</h6>
+          </div>
+      </div>
+  </footer>
+  
+    <!-- aqui implementamos un bloque de codigo de javascript para darle la funcionalidad al menu desplegable para que
+  sea visualizado al tocar el boton de usuario -->
+  <script>
+    const btnUsuario = document.querySelector('.boton-usuario');
+    const menu = document.querySelector('.menu-desplegable');
+
+    btnUsuario.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!btnUsuario.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
